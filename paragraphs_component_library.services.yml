@@ -1,0 +1,7 @@
+services:
+  paragraphs_component_library.paragraph_export_builder:
+    class: Drupal\paragraphs_component_library\Service\ParagraphConfigBuilder
+    arguments: ['@config.manager', '@entity_field.manager']
+  paragraphs_component_library.paragraph_builder:
+    class: Drupal\paragraphs_component_library\Service\ParagraphBuilder
+    arguments: ['@paragraphs_component_library.paragraph_export_builder', '@module_handler']

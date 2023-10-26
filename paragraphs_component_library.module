@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Paragraphs Component Library module.
+ */
+
+use Drupal\Core\Url;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_operation_alter().
+ */
+function paragraphs_component_library_entity_operation_alter(array &$operations, EntityInterface $entity) {
+  if ($entity->getEntityTypeId() === 'paragraphs_type') {
+    $operations['export_paragraph'] = [
+      'title' => t('Export Paragraph'),
+      'url' => Url::fromRoute('paragraphs_component_library.paragraphs_export_form', [
+        'paragraph_type' => $entity->id(),
+      ]),
+      'weight' => 150,
+    ];
+    $operations['sync_paragraph'] = [
+      'title' => t('Sync Paragraph'),
+      'url' => Url::fromRoute('paragraphs_component_library.paragraphs_sync_form', [
+        'paragraph_type' => $entity->id(),
+      ]),
+      'weight' => 151,
+    ];
+  }
+}
+

@@ -1,0 +1,7 @@
+name: 'Paragraphs Component Library'
+type: module
+description: 'A module to help easily develop and contain Paragraph components.'
+package: Custom
+core_version_requirement: ^10
+dependencies:
+  - paragraphs:paragraphs

@@ -1,0 +1,23 @@
+paragraphs_component_library.paragraphs_export_form:
+  path: '/admin/structure/paragraphs_type/{paragraph_type}/export'
+  defaults:
+    _form: 'Drupal\paragraphs_component_library\Form\ParagraphExportForm'
+    _title: 'Paragraph Export Form'
+  requirements:
+    _permission: 'administer paragraphs settings'
+  options:
+    parameters:
+      paragraph_type:
+        type: entity:paragraphs_type
+
+paragraphs_component_library.paragraphs_sync_form:
+  path: '/admin/structure/paragraphs_type/{paragraph_type}/sync'
+  defaults:
+    _form: 'Drupal\paragraphs_component_library\Form\ParagraphSyncForm'
+    _title: 'Paragraph Export Form'
+  requirements:
+    _permission: 'administer paragraphs settings'
+  options:
+    parameters:
+      paragraph_type:
+        type: entity:paragraphs_type
